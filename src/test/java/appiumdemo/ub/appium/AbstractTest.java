@@ -11,17 +11,18 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
 
-public class AbstractTest{
+public class AbstractTest {
 
 	protected static WebDriver driver = null;
-	
-	@BeforeSuite(alwaysRun = true)	
+
+	@BeforeSuite(alwaysRun = true)
 	public void beforeSuite(ITestContext testContext) {
 
 	}
 
 	@BeforeTest(alwaysRun = true)
-	public void appiumTestSetUp() throws MalformedURLException, InterruptedException{
+	public void appiumTestSetUp() throws MalformedURLException,
+			InterruptedException {
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability("deviceName", Configuration.testDeviceName);
 		capabilities.setCapability("platformVersion",
@@ -37,16 +38,16 @@ public class AbstractTest{
 				capabilities);
 		Utils.waitForDuration(driver, 10);
 		Utils.pauseDriverForDuration(1000);
-		
+
 	}
 
 	@AfterTest
 	public void appiumTestTearDown() {
-		
-		if(driver !=null){
+
+		if (driver != null) {
 			driver.quit();
 		}
-		
+
 	}
 
 	public static WebDriver getDriver() {

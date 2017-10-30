@@ -15,6 +15,9 @@ public class FacebookHome {
 	By element_login_forgot_password = new By.ById(
 			"com.facebook.katana:id/login_forgot_password");
 
+	private String user_loginname = "";
+	private String user_loginpassword = "";
+
 	public FacebookHome(WebDriver drv) {
 		driver = drv;
 
@@ -31,9 +34,21 @@ public class FacebookHome {
 						.isVisibleAndDisplayed(element_login_create_account_button);
 
 	}
-	
-	public String getButtonText(){
+
+	public String getButtonText() {
 		return UiHelper.getText(element_login_create_account_button);
+	}
+
+	public void enterUsernameToEmailorPhoneField() {
+		UiHelper.enterText(element_login_username, user_loginname);
+	}
+
+	public void enterUserPasswordToPasswordField() {
+		UiHelper.enterText(element_login_password, user_loginpassword);
+	}
+
+	public void selectLoginButton() {
+		UiHelper.click(element_login_login);
 	}
 
 }

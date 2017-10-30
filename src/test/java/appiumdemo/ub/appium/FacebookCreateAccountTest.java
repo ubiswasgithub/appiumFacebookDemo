@@ -37,7 +37,9 @@ public class FacebookCreateAccountTest{
 		objStep.enterUserData();
 		objStep.selectNextButtonToProceed();
 		objStep.verifyTermsAndConditionPageIsDisplayed();
+		objStep.verifySignupWithoutUploadingMyContactsButtonIsDisplayed();
 		objStep.selectSignupFinishButton();
+		
 		
 		
 	

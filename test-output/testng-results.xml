@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="24398" started-at="2017-10-30T09:48:14Z" finished-at="2017-10-30T09:48:39Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="24398" started-at="2017-10-30T09:48:14Z" finished-at="2017-10-30T09:48:39Z">
+      <class name="appiumdemo.ub.appium.FacebookLoginTest">
+        <test-method status="PASS" signature="beforeSuite(org.testng.ITestContext)[pri:0, instance:appiumdemo.ub.appium.FacebookLoginTest@3a5ed7a6]" name="beforeSuite" is-config="true" duration-ms="5" started-at="2017-10-30T15:48:14Z" finished-at="2017-10-30T15:48:14Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@710636b0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method status="PASS" signature="appiumTestSetUp()[pri:0, instance:appiumdemo.ub.appium.FacebookLoginTest@3a5ed7a6]" name="appiumTestSetUp" is-config="true" duration-ms="8455" started-at="2017-10-30T15:48:14Z" finished-at="2017-10-30T15:48:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- appiumTestSetUp -->
+        <test-method status="PASS" signature="verifyFacebookLoginTest()[pri:0, instance:appiumdemo.ub.appium.FacebookLoginTest@3a5ed7a6]" name="verifyFacebookLoginTest" duration-ms="14436" started-at="2017-10-30T15:48:23Z" finished-at="2017-10-30T15:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyFacebookLoginTest -->
+        <test-method status="PASS" signature="appiumTestTearDown()[pri:0, instance:appiumdemo.ub.appium.FacebookLoginTest@3a5ed7a6]" name="appiumTestTearDown" is-config="true" duration-ms="1495" started-at="2017-10-30T15:48:37Z" finished-at="2017-10-30T15:48:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- appiumTestTearDown -->
+      </class> <!-- appiumdemo.ub.appium.FacebookLoginTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
