@@ -37,7 +37,7 @@ public class AbstractTest {
 		driver = new RemoteWebDriver(new URL(Configuration.testAppiumServer),
 				capabilities);
 		Utils.waitForDuration(driver, 10);
-		Utils.pauseDriverForDuration(1000);
+		Utils.pauseDriverForDuration(8000);
 
 	}
 

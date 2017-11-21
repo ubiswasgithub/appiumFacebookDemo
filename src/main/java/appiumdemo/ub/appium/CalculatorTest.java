@@ -17,12 +17,13 @@ public class CalculatorTest {
 
 		
 		DesiredCapabilities capabilities = new DesiredCapabilities();
-		capabilities.setCapability("deviceName", "192.168.55.101:5555");
-		capabilities.setCapability("platformVersion", "6.0");
+		capabilities.setCapability("deviceName", "04cd746200741e45");
+		capabilities.setCapability("platformVersion", "6.0.1");
 		capabilities.setCapability("platformName", "Android");
+		capabilities.setCapability("browserName", "Android");
 		
 		// android settings 2...
-		capabilities.setCapability("appPackage", "com.android.calculator2");
+//		capabilities.setCapability("appPackage", "com.android.calculator2");
 		capabilities.setCapability("appActivity", "com.android.calculator2.Calculator");
 		
 		driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);

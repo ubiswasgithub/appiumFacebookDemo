@@ -12,6 +12,7 @@ public class FacebookHomeTest extends AbstractTest {
 
 	@Test
 	public void facbookHomeTest() {
+		
 		Assert.assertTrue(objHome.verifyLoginFieldIsDisplayed());
 		Assert.assertEquals(objHome.getButtonText(),
 				"Create New Facebook Account");

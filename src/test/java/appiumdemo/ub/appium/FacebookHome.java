@@ -17,6 +17,8 @@ public class FacebookHome {
 
 	private String user_loginname = "";
 	private String user_loginpassword = "";
+	
+	private String login_create_button = "Create New Facebook Account";
 
 	public FacebookHome(WebDriver drv) {
 		driver = drv;
@@ -28,6 +30,14 @@ public class FacebookHome {
 	}
 
 	public boolean verifyLoginFieldIsDisplayed() {
+		Log.logVerify("Home page contains login fields and button to create facebook account");
+		boolean t = UiHelper.isVisibleAndDisplayed(element_login_username)
+				&& UiHelper.isVisibleAndDisplayed(element_login_password)
+				&& UiHelper
+						.isVisibleAndDisplayed(element_login_create_account_button);
+		if(t){
+			Log.logPass("Page contains login fields and button to create facebook account");
+		}else Log.logFail("Page doesn't contain login fields and button to create facebook account");
 		return UiHelper.isVisibleAndDisplayed(element_login_username)
 				&& UiHelper.isVisibleAndDisplayed(element_login_password)
 				&& UiHelper
@@ -36,7 +46,12 @@ public class FacebookHome {
 	}
 
 	public String getButtonText() {
-		return UiHelper.getText(element_login_create_account_button);
+		Log.logVerify("Button to create facebook account has the correct name");
+		String txt = UiHelper.getText(element_login_create_account_button);
+		if (login_create_button.equalsIgnoreCase(txt)){
+			Log.logPass("Name of the button to create facebook account is correct");
+		}
+		return txt;
 	}
 
 	public void enterUsernameToEmailorPhoneField() {
@@ -50,5 +65,7 @@ public class FacebookHome {
 	public void selectLoginButton() {
 		UiHelper.click(element_login_login);
 	}
+	
+	
 
 }

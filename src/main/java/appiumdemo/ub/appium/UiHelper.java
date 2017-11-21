@@ -16,6 +16,7 @@ public class UiHelper {
 	public static boolean isVisibleAndDisplayed(By el) {
 		if (driver.findElement(el).isDisplayed()
 				&& driver.findElement(el).isEnabled()) {
+		
 			return true;
 		} else {
 			return false;
@@ -25,7 +26,8 @@ public class UiHelper {
 
 	public static String getText(By el) {
 		// TODO Auto-generated method stub
-		return driver.findElement(el).getText();
+		String txt = driver.findElement(el).getText();
+		return txt;
 	}
 
 	public static void enterText(By el, String txt) {
