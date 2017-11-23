@@ -21,21 +21,20 @@ public class AbstractTest {
 	}
 
 	@BeforeTest(alwaysRun = true)
-	public void appiumTestSetUp() throws MalformedURLException,
-			InterruptedException {
+	public void appiumTestSetUp() throws MalformedURLException, InterruptedException {
+		Log.logInfo("Starting Regression Test......");
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability("deviceName", Configuration.testDeviceName);
-		capabilities.setCapability("platformVersion",
-				Configuration.testPlatformVersion);
-		capabilities.setCapability("platformName",
-				Configuration.testPlatformName);
+		capabilities.setCapability("platformVersion", Configuration.testPlatformVersion);
+		capabilities.setCapability("platformName", Configuration.testPlatformName);
+		capabilities.setCapability("browserName", Configuration.testBrowserName);
 
 		capabilities.setCapability("appPackage", Configuration.testAppPackage);
-		capabilities
-				.setCapability("appActivity", Configuration.testAppActivity);
+		capabilities.setCapability("appActivity", Configuration.testAppActivity);
+		
+		Log.logInfo("Initializing appium remote driver...");
 
-		driver = new RemoteWebDriver(new URL(Configuration.testAppiumServer),
-				capabilities);
+		driver = new RemoteWebDriver(new URL(Configuration.testAppiumServer), capabilities);
 		Utils.waitForDuration(driver, 10);
 		Utils.pauseDriverForDuration(8000);
 
@@ -43,7 +42,7 @@ public class AbstractTest {
 
 	@AfterTest
 	public void appiumTestTearDown() {
-
+		Log.logInfo("Quit appium remote driver and finish the test..");
 		if (driver != null) {
 			driver.quit();
 		}

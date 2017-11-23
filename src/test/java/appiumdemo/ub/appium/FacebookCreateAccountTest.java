@@ -2,14 +2,21 @@ package appiumdemo.ub.appium;
 
 
 import org.testng.annotations.Test;
+
+import pdfreport.PdfLog;
+
 import org.testng.annotations.BeforeMethod;
+
+import java.lang.reflect.Method;
+
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 
 public class FacebookCreateAccountTest{
 	CreateAccount objStep = new CreateAccount();
 	
 
-	@Test
+	@Test(groups = "SignUp", description = "Test case to sign up as new user")
 	public void createAccountTest() {
 		objStep.selectCreateButtonToSignup();
 		objStep.verifyHomepageTextIsCorrect();
@@ -45,14 +52,16 @@ public class FacebookCreateAccountTest{
 	
 	}
 
-	@BeforeMethod
-	public void beforeMethod() {
+	@BeforeMethod (alwaysRun = true)
+	public void beforeMethod(Method method) {
+		Log.logTestMethodStart(method);
+		PdfLog.clearActionResultStatusList();
 
 	}
 
 	@AfterMethod
-	public void afterMethod() {
-
+	public void afterMethod(Method method, ITestResult result) {
+		Log.logTestMethodEnd(method, result);
 	}
 
 }

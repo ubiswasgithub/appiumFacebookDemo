@@ -12,6 +12,8 @@ import org.testng.internal.TestResult;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 
+import pdfreport.StepVerify;
+
 public class Log extends Reporter{
 	 private static final Logger logger = LoggerFactory.getLogger(Log.class);
 
@@ -114,6 +116,7 @@ public class Log extends Reporter{
 		 */
 		public static void logVerify(String verifyMessage){
 			logMessage(String.format("[Verify] %s", verifyMessage));
+			StepVerify.actionTaken(verifyMessage);
 //			extntTest.info(verifyMessage);
 		}
 		
@@ -149,6 +152,7 @@ public class Log extends Reporter{
 		 */
 		public static void logPass(String message){
 			logMessage(String.format("[Pass] %s", message));
+			StepVerify.successAction(message);
 //			extntTest.pass(message);
 		}
 		
@@ -158,6 +162,7 @@ public class Log extends Reporter{
 		 */
 		public static void logFail(String message) {
 			logMessage(String.format("[Fail] %s", message));
+			StepVerify.failAction(message);
 //			try {
 //				extntTest.fail(message, MediaEntityBuilder
 //						.createScreenCaptureFromPath(ExtentManager.createScreenshot(Browser.getDriver())).build());
@@ -305,9 +310,9 @@ public class Log extends Reporter{
 	     */
 	    public static void logTestMethodStart(Method method){
 	    	logMessage("(+) (+) (+) (+) (+) (Starting new Test Method '"+ method.getName() +"') (+) (+) (+) (+) (+)");
-	    	methodNode = new ThreadLocal<ExtentTest>();
-//	    	extntTest = classNode.get().createNode(method.getName());
-			methodNode.set(extntTest);
+//	    	methodNode = new ThreadLocal<ExtentTest>();
+////	    	extntTest = classNode.get().createNode(method.getName());
+//			methodNode.set(extntTest);
 	    }
 	    
 	    /**
@@ -322,6 +327,6 @@ public class Log extends Reporter{
 //	        else
 //	        	methodNode.get().pass("[TEST PASSED]");
 
-	    	extentReport.flush();
+//	    	extentReport.flush();
 	    }
 }

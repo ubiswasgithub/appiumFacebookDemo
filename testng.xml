@@ -4,12 +4,13 @@
 	<listeners>
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+		<listener class-name="pdfreport.PdfLogging"></listener>
 	</listeners>
 	<test name="RegressionTest">
 		<classes>
 			<class name="appiumdemo.ub.appium.FacebookHomeTest" />
-			<!-- <class name="appiumdemo.ub.appium.FacebookCreateAccountTest" />
-			<class name="appiumdemo.ub.appium.FacebookLoginTest" /> -->
+			<class name="appiumdemo.ub.appium.FacebookCreateAccountTest" />
+			<!-- <class name="appiumdemo.ub.appium.FacebookLoginTest" /> -->
 
 		</classes>
 	</test> <!-- Test -->

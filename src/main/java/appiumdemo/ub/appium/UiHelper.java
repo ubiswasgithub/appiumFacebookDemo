@@ -14,19 +14,26 @@ public class UiHelper {
 	}
 
 	public static boolean isVisibleAndDisplayed(By el) {
-		if (driver.findElement(el).isDisplayed()
-				&& driver.findElement(el).isEnabled()) {
-		
-			return true;
-		} else {
-			return false;
+		boolean t;
+		try{
+			if (driver.findElement(el).isDisplayed() && driver.findElement(el).isEnabled()){
+				t = true;
+			}else t = false;
+		}catch (Exception e){
+			t = false;
 		}
-
+		return t;
 	}
 
 	public static String getText(By el) {
 		// TODO Auto-generated method stub
-		String txt = driver.findElement(el).getText();
+		String txt = null;
+		try {
+			txt = driver.findElement(el).getText();
+		}catch(Exception e){
+			txt = null;
+		}
+		
 		return txt;
 	}
 

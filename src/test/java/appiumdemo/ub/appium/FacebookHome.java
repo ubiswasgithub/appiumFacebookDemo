@@ -30,7 +30,7 @@ public class FacebookHome {
 	}
 
 	public boolean verifyLoginFieldIsDisplayed() {
-		Log.logVerify("Home page contains login fields and button to create facebook account");
+		Log.logVerify("Check that Home page contains login fields and button to create facebook account");
 		boolean t = UiHelper.isVisibleAndDisplayed(element_login_username)
 				&& UiHelper.isVisibleAndDisplayed(element_login_password)
 				&& UiHelper
@@ -38,19 +38,16 @@ public class FacebookHome {
 		if(t){
 			Log.logPass("Page contains login fields and button to create facebook account");
 		}else Log.logFail("Page doesn't contain login fields and button to create facebook account");
-		return UiHelper.isVisibleAndDisplayed(element_login_username)
-				&& UiHelper.isVisibleAndDisplayed(element_login_password)
-				&& UiHelper
-						.isVisibleAndDisplayed(element_login_create_account_button);
+		return t;
 
 	}
 
 	public String getButtonText() {
-		Log.logVerify("Button to create facebook account has the correct name");
+		Log.logVerify("Check that Button text is 'Create New Facebook Account'");
 		String txt = UiHelper.getText(element_login_create_account_button);
 		if (login_create_button.equalsIgnoreCase(txt)){
-			Log.logPass("Name of the button to create facebook account is correct");
-		}
+			Log.logPass("Text of the button is "+txt);
+		}else Log.logFail("Text of the button is "+ txt);
 		return txt;
 	}
 
