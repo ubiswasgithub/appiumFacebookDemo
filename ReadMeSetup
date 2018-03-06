@@ -1,0 +1,36 @@
+Steps to build environment:
+
+1. Install Android SDK: http://toolsqa.com/mobile-automation/appium/install-android-sdk-adb-on-windows/
+2. Install Android SDK Packages: http://toolsqa.com/mobile-automation/appium/install-android-sdk-packages/
+3. Set up Android Environment Variable: http://toolsqa.com/mobile-automation/appium/set-up-android-environment-path/
+4. Download and Install NodeJs: http://toolsqa.com/mobile-automation/appium/download-and-install-nodejs/
+5. Install Microsoft .net Framework(Skip if system has>4.5): http://toolsqa.com/mobile-automation/appium/install-microsoft-dot-net-framework/
+6. Download And Install Appium Desktop Client: http://toolsqa.com/mobile-automation/appium/download-and-install-appium-desktop-client/
+7. Install Genymotion: https://github.com/codepath/android_guides/wiki/Genymotion-2.0-Emulators-with-Google-Play-support
+8. Setup a maven eclispe project
+      --add Gson jar files
+	  --add selenium java jar
+	  --java client jar
+9. Create a virtual device from Genymotion and configure bios information: Open Oracle VM VirtualBox (got from genymotion setup) -> Select your simulator -> Go to settings of simulator -> Select General tab -> Select Basic sub tab -> Select your OS type -> Select your Version of your OS -> Save and Exit
+	---https://stackoverflow.com/questions/36436253/genymotion-the-virtual-device-got-no-ip-address
+10. Install GApps to view the play store.
+11. Install chrome from playstore
+12. Go to CMD window > run adb devices command to find out the emulator device name.
+13. Update device name from step11 in project code base.
+12. Start Appium server > Run your project
+13. Install macaca to extract xpath using CMD command: "npm intall macaca-cli -g" > check macaca doctor > npm install app-inspector -g
+
+
+Find out the apk information:
+
+1. Using command: Open the app in emulator/device (make sure device is not offline or idle mode) > Go to CMD window and run: adb devices> adb shell> dumpsys window windows | grep -E 'mCurrentFocus|mFocusedApp'
+
+
+Articles:
+https://docs.genymotion.com/Content/03_Virtual_Devices/Virtual_Devices.htm
+http://developers.perfectomobile.com/display/TT/Choosing+the+Right+Design+Approach+to+Automation+with+Selenium+WebDriver
+https://bitbar.com/the-basics-of-mobile-web-testing-using-appium-selenium/
+http://www.tothenew.com/blog/mobile-web-automation-with-appium-2/
+http://www.softwaretestinghelp.com/appium-tutorial-for-beginners/
+https://nishantverma.gitbooks.io/appium-for-android/executing_test_on_real_devices/
+https://stackoverflow.com/questions/1554099/why-is-the-android-emulator-so-slow-how-can-we-speed-up-the-android-emulator?rq=1
